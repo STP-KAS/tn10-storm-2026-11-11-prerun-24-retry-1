@@ -4,6 +4,8 @@
 
 Fixed 2026-11-13T23:25:47Z, before the first family submit. sha256 of the lowercase hex id. The id is not in this file. This is hashes/SIXTEEN.md for pre-run 24 retry 1. Floor is families 1–4. Kcc is families 5–5.
 
+On origin/main at 2026-11-13T23:26:18Z, commit 32ffcc1. That commit put these rows on GitHub. Fixed is the local write. On origin is that commit's time.
+
 | Family | Cohort | sha256 |
 |---:|---|---|
 | 1 | floor | `39cbc735205cbbb68743da4110bc4d01c42e3e60d2ef220ba71b9882066a057f` |
