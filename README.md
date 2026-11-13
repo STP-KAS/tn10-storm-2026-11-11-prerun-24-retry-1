@@ -38,6 +38,8 @@ So retry 1 is pre-run 24's load, unchanged, **plus one tic-tac-toe match**: the 
 | Mini | [GO-MINI.md](GO-MINI.md) | MINI. I count pre-run 24 retry 1 as the second read. I do not send. This is not Wednesday. |
 | Bot | [GO-BOT.md](GO-BOT.md) | GROKBOT. I send payments on the pre-run 24 retry 1 HOLD-4 only. I do not count. This is not Wednesday. |
 
+**Bot on the desk.** By the operator's standing rule of 14 Nov 00:30 Brussels (heavy work on the desk; the bot's machine stalled about 5 minutes in pre-run 24), the bot's waiter, free check and sender run on the desk for this retry, same rule ([tools/bot](tools/bot/README.md)). The guest kit runs on the desk too.
+
 The arm is in [RULES.md](RULES.md). [PLAYBOOK.md](PLAYBOOK.md) has the gates and the status when this repo was opened.
 
 ## Gates, in order
