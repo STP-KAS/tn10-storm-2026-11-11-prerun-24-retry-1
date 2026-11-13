@@ -24,3 +24,10 @@ Filled before `PRE-RUN-OPEN` (UTC):
 - Guest kit gate, `arm-guest.sh --dry` against the desk node, 2026-11-13T23:08:04Z: `GUEST gate ok mode=dry` (testnet-10, synced, server 2.1.0, DAA moved 92 in 10 s, operator 4 coins / 800 tKAS, issuer 2 coins / 200 tKAS, nothing submitted).
 - Key 0 after funding: 130,513 usable tKAS in 3,662 coins over 3 tKAS. `BUDGET_CHECK` is repeated by the desk runner before genesis.
 - Disk: desk 315 GB free, Mini 294 GB free, box 102 GB free; all over the floor.
+
+## Offline rehearsals before the open (fake node, fake sender and mint, local bare origin; the guest kit in dry mode: its read-only gate against the desk node, nothing sent)
+
+- p24r1-a, stopped early: the rehearsal's tool dir held the real genesis submitter instead of the fake one; it stopped on the fake bundle before any submit (nothing sent).
+- p24r1-b, stopped early by hand: the guest kid exited at its start (a comment hid two constant definitions in `guest24.mjs`). Fixed.
+- p24r1-c, 23:23–23:43 UTC: passed on the final runner and guest files (`desk-runner.mjs` db86145f7009, `guest24.mjs` 2e2698738630, LF sha256 prefixes, the same as in `tools/desk/`). The guest kid started the container, read the kit's gate (`gate ok`), wrote its totals, stopped at RETURN's GUEST-STOP, ran the lane read and removed the container; no process exit was logged; TARGET.md rendered the guest row. The rehearsal's counts are fake and are not results.
+- The desk bot was checked read-only (one free check, nothing sent or pushed) before the open.
