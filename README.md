@@ -11,12 +11,16 @@
 | Field | Value |
 |---|---|
 | Target | one covenant hop, one KCC-20 mint and one tic-tac-toe guest carrier, each accepted on the desk node in the same open window ([target plan](https://github.com/STP-KAS/tn10-target-plan/blob/main/plan/PLAN.md), pre-run 24 card; unchanged) |
-| Met or not met | open: written after RETURN |
+| Met or not met | **met**: 7,139 covenant hops, 30 of 30 mints and 8 of 8 guest carriers accepted on the desk node in one open window (23:46:07–00:17:04 UTC) |
 | Retry count | 1 (retries [pre-run 24](https://github.com/STP-KAS/tn10-storm-2026-11-11-prerun-24), which missed the guest line) |
 | Core tags | 1 (mempool rotation, issue #1146: a light 60-second id sample, not a full dump) |
-| Status | in-progress |
+| Status | done |
 
 **Where this starts.** From [pre-run 24's locks/LOCKED.md](https://github.com/STP-KAS/tn10-storm-2026-11-11-prerun-24/blob/main/locks/LOCKED.md), copied here as [locks/LOCKED.md](locks/LOCKED.md), with a retry 1 section added at the end. Pre-runs 1 to 23 are in [tn-master](https://github.com/STP-KAS/tn-master).
+
+## Result
+
+All three lines met in the same open window, read on the desk node ([counts/desk/TARGET.md](counts/desk/TARGET.md)): 7,139 covenant hops (families 1–4 at the floor), 30 of 30 mints (median accept 1,020 ms), and one tic-tac-toe match: 8 of 8 carriers (Init, two deposits, create, join, two turns, withdraw) found among the desk node's accepted ids; the lane's DA read at RETURN showed 1 game finished. Mini read 16 of 16 minutes in full with the same family counts. Rotation sample: 869 ids checked, 0 still listed. The bot, on the desk this time, read HOLD-3 3 s after it reached origin, found a free node before the pin and sent 37 payments in the pinned minute (37 OK). The guest line needed one fix during the run ([locks](locks/LOCKED.md#locked-during-pre-run-24-retry-1)): the kit read the lane id from a field the DA state does not have, so the first `ttflow` stopped on its config before sending anything; it was run again in the same container with the lane id `ttd` logged. Details: [logs/LESSONS.md](logs/LESSONS.md).
 
 ## The one change
 

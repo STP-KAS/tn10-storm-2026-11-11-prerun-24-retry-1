@@ -743,3 +743,15 @@ Everything locked above stays. One change, for one reason:
 ## Locked during pre-run 24 retry 1
 
 When a fix works, append it here, one block per fix: UTC time, what failed or worked, what was changed, why that change stays.
+
+```
+- 2026-11-13T23:51:59Z (fix during the run, guest line).
+- What failed: arm-guest.sh (kit 04db647) took the lane id from the DA state's lane_id/lane field; the DA state has neither (only
+  lane_subnet), so ttflow got TT_LANE_ID="undefined" and panicked on its config at 23:49:12Z, before sending anything. Under
+  set -euo pipefail the kit's next grep then ended the script (exit 1) without its ttflow line.
+- What was changed: the guest kid was stopped (ttd and the lane left up) and tools/desk/guest-fix1.mjs ran ttflow once more in the
+  same container with the lane id ttd itself logged, then confirmed on the desk node exactly as guest24.mjs does. No compile.
+- What worked: 8 of 8 carriers submit-OK at 23:51:59-23:52:13Z and all 8 among the desk node's accepted ids by 23:52:28Z.
+- Why that change stays, for the next repo: the kit should read the lane id from ttd (or derive it from lane_subnet, its first four
+  bytes big-endian) and its result greps should not run under pipefail. Fix the kit in tn10-target-plan before the next guest run.
+```

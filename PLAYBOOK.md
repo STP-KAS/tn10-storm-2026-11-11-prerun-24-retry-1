@@ -31,3 +31,9 @@ Filled before `PRE-RUN-OPEN` (UTC):
 - p24r1-b, stopped early by hand: the guest kid exited at its start (a comment hid two constant definitions in `guest24.mjs`). Fixed.
 - p24r1-c, 23:23–23:43 UTC: passed on the final runner and guest files (`desk-runner.mjs` db86145f7009, `guest24.mjs` 2e2698738630, LF sha256 prefixes, the same as in `tools/desk/`). The guest kid started the container, read the kit's gate (`gate ok`), wrote its totals, stopped at RETURN's GUEST-STOP, ran the lane read and removed the container; no process exit was logged; TARGET.md rendered the guest row. The rehearsal's counts are fake and are not results.
 - The desk bot was checked read-only (one free check, nothing sent or pushed) before the open.
+
+## After the run
+
+- `PRE-RUN-OPEN` 2026-11-13T23:46:07Z; `MINI-ARMED` 23:46:29Z; genesis 5 of 5 at 23:48:52Z; RETURN on origin 00:11:22Z; TARGET 00:17:04Z.
+- Guest: gate ok 23:49:11Z, first `ttflow` stopped on its config (lane-id bug, nothing sent), fix 23:51:59Z, 8 of 8 carriers accepted on the desk node by 23:52:28Z, ttd stopped at RETURN 00:07:28Z (1 game finished).
+- Result: met (see [logs/LESSONS.md](logs/LESSONS.md)).
